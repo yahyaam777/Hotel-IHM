@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import { useLanguage } from '@/hooks/use-language';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
@@ -15,6 +16,8 @@ const fadeIn = {
 };
 
 const Contact = () => {
+  const { t } = useLanguage();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -31,9 +34,9 @@ const Contact = () => {
         variants={fadeIn}
       >
         <Mail className="mx-auto text-primary mb-4" size={48} />
-        <h1 className="text-5xl font-extrabold text-gray-800 mb-4">Get In Touch</h1>
+        <h1 className="text-5xl font-extrabold text-gray-800 mb-4">{t('Get In Touch')}</h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Have questions or just want to chat? We’re here to help you plan your perfect stay.
+          {t('Have questions or just want to chat? We’re here to help you plan your perfect stay.')}
         </p>
       </motion.section>
 
@@ -48,12 +51,12 @@ const Contact = () => {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <h2 className="text-2xl font-semibold mb-2">Send Us a Message</h2>
+            <h2 className="text-2xl font-semibold mb-2">{t('Send Us a Message')}</h2>
             <form className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {['First Name', 'Last Name'].map((label, i) => (
                   <div key={i} className="space-y-2">
-                    <label htmlFor={label} className="text-sm font-medium">{label}</label>
+                    <label htmlFor={label} className="text-sm font-medium">{t(label)}</label>
                     <input
                       id={label}
                       type="text"
@@ -64,7 +67,7 @@ const Contact = () => {
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium">Email</label>
+                <label htmlFor="email" className="text-sm font-medium">{t('Email')}</label>
                 <input
                   id="email"
                   type="email"
@@ -73,7 +76,7 @@ const Contact = () => {
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="subject" className="text-sm font-medium">Subject</label>
+                <label htmlFor="subject" className="text-sm font-medium">{t('Subject')}</label>
                 <input
                   id="subject"
                   type="text"
@@ -82,7 +85,7 @@ const Contact = () => {
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium">Message</label>
+                <label htmlFor="message" className="text-sm font-medium">{t('Message')}</label>
                 <textarea
                   id="message"
                   rows={5}
@@ -90,7 +93,7 @@ const Contact = () => {
                 ></textarea>
               </div>
 
-              <Button type="submit" className="w-full md:w-auto mt-2">Send Message</Button>
+              <Button type="submit" className="w-full md:w-auto mt-2">{t('Send Message')}</Button>
             </form>
           </motion.div>
 
@@ -103,11 +106,11 @@ const Contact = () => {
             variants={fadeIn}
           >
             <div>
-              <h2 className="text-xl font-semibold mb-4">Our Contact Information</h2>
+              <h2 className="text-xl font-semibold mb-4">{t('Our Contact Information')}</h2>
               <div className="space-y-4 text-gray-700">
                 <p className="flex items-start gap-3">
                   <MapPin className="text-primary mt-1" />
-                  <span>123 Hotel Street, City, Country</span>
+                  <span>{t('123 Hotel Street, City, Country')}</span>
                 </p>
                 <p className="flex items-start gap-3">
                   <Phone className="text-primary mt-1" />
@@ -121,7 +124,7 @@ const Contact = () => {
             </div>
 
             <div>
-              <h2 className="text-xl font-semibold mb-4">Business Hours</h2>
+              <h2 className="text-xl font-semibold mb-4">{t('Business Hours')}</h2>
               <div className="space-y-2 text-gray-700">
                 {[
                   { day: 'Monday - Friday', time: '9:00 AM - 6:00 PM' },
@@ -129,7 +132,7 @@ const Contact = () => {
                   { day: 'Sunday', time: 'Closed' },
                 ].map((item, i) => (
                   <p key={i} className="flex justify-between border-b pb-1">
-                    <span>{item.day}:</span>
+                    <span>{t(item.day)}:</span>
                     <span>{item.time}</span>
                   </p>
                 ))}

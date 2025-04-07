@@ -58,19 +58,19 @@ const FeaturedHotels = () => {
     <section className="py-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="space-y-4 mb-10 text-center">
-          <h2 className="text-3xl font-bold tracking-tight">Featured Hotels</h2>
+          <h2 className="text-3xl font-bold tracking-tight">{t('Featured Hotels')}</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Discover our handpicked selection of the most extraordinary places to stay around the world.
+          {t('Discover our handpicked selection of the most extraordinary places to stay around the world.')}
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {featuredHotels.map((hotel) => (
             <Link to={`/hotels/${hotel.id}`} key={hotel.id}>
               <Card className="overflow-hidden h-full transition-all duration-300 hover:shadow-md group">
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  <img 
-                    src={hotel.image} 
+                  <img
+                    src={hotel.image}
                     alt={hotel.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
@@ -112,3 +112,4 @@ const FeaturedHotels = () => {
 };
 
 export default FeaturedHotels;
+

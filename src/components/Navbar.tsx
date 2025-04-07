@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { 
-  Search, 
-  User, 
-  Menu, 
-  X, 
-  Globe, 
-  ShieldCheck, 
-  LogOut, 
-  UserCircle 
+import {
+  Search,
+  User,
+  Menu,
+  X,
+  Globe,
+  ShieldCheck,
+  LogOut,
+  UserCircle
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { LanguageSelector } from './LanguageSelector';
@@ -31,6 +31,7 @@ const Navbar = () => {
   const { t } = useLanguage();
   const { user, isAdmin, isAuthenticated, logout } = useAuth();
   const navigate = useNavigate();
+  const languageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,6 +47,21 @@ const Navbar = () => {
     };
   }, [scrolled]);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        languageRef.current &&
+        !languageRef.current.contains(event.target as Node)
+      ) {
+        setLanguageSelectorOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
@@ -53,14 +69,13 @@ const Navbar = () => {
   const handleLogout = () => {
     logout();
     navigate('/');
-    // Close the mobile menu if it's open
     if (mobileMenuOpen) {
       setMobileMenuOpen(false);
     }
   };
 
   return (
-    <header 
+    <header
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out py-4 px-6 md:px-10',
         {
@@ -71,7 +86,7 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link to="/" className="text-xl font-semibold tracking-tight">
-          HotelHub
+           {t('HotelHub')}
         </Link>
 
         {/* Desktop Navigation */}
@@ -92,26 +107,28 @@ const Navbar = () => {
 
         {/* Desktop Actions */}
         <div className="hidden md:flex items-center space-x-4">
-          <Button 
-            variant="ghost" 
-            size="icon"
-            onClick={() => setLanguageSelectorOpen(!languageSelectorOpen)}
-            className="relative"
-          >
-            <Globe className="h-5 w-5" />
+          {/* Language Button with Dropdown */}
+          <div className="relative" ref={languageRef}>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setLanguageSelectorOpen(!languageSelectorOpen)}
+            >
+              <Globe className="h-5 w-5" />
+            </Button>
             {languageSelectorOpen && (
-              <div className="absolute top-full right-0 mt-2 glass rounded-md p-2 shadow-md w-40 animate-fade-in">
+              <div className="absolute right-0 mt-2 z-50 bg-white dark:bg-gray-900 rounded-md shadow-lg p-2 w-40 animate-fade-in">
                 <LanguageSelector onClose={() => setLanguageSelectorOpen(false)} />
               </div>
             )}
-          </Button>
-          
+          </div>
+
           <Link to="/search">
             <Button variant="ghost" size="icon">
               <Search className="h-5 w-5" />
             </Button>
           </Link>
-          
+
           {isAuthenticated ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -168,48 +185,48 @@ const Navbar = () => {
       {mobileMenuOpen && (
         <div className="md:hidden fixed inset-x-0 top-16 bg-background/95 backdrop-blur-lg border-b border-border animate-fade-in">
           <div className="px-4 py-5 space-y-4">
-            <Link 
-              to="/" 
+            <Link
+              to="/"
               className="block text-sm font-medium py-2 transition-colors hover:text-primary"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t('home')}
             </Link>
-            <Link 
-              to="/hotels" 
+            <Link
+              to="/hotels"
               className="block text-sm font-medium py-2 transition-colors hover:text-primary"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t('hotels')}
             </Link>
-            <Link 
-              to="/about" 
+            <Link
+              to="/about"
               className="block text-sm font-medium py-2 transition-colors hover:text-primary"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t('about')}
             </Link>
-            <Link 
-              to="/contact" 
+            <Link
+              to="/contact"
               className="block text-sm font-medium py-2 transition-colors hover:text-primary"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t('contact')}
             </Link>
-            
+
             <div className="pt-4 border-t border-border flex flex-col space-y-3">
               <LanguageSelector onClose={() => setMobileMenuOpen(false)} />
-              
+
               {isAuthenticated ? (
                 <>
                   <div className="flex items-center py-2">
                     <UserCircle className="h-5 w-5 mr-2" />
                     <span className="font-medium">{user?.name || (isAdmin ? 'Admin' : 'User')}</span>
                   </div>
-                  
+
                   {isAdmin && (
-                    <Link 
-                      to="/admin-dashboard" 
+                    <Link
+                      to="/admin-dashboard"
                       className="block text-sm font-medium py-2 transition-colors hover:text-primary"
                       onClick={() => setMobileMenuOpen(false)}
                     >
@@ -219,10 +236,10 @@ const Navbar = () => {
                       </div>
                     </Link>
                   )}
-                  
-                  <Button 
-                    variant="outline" 
-                    className="justify-start" 
+
+                  <Button
+                    variant="outline"
+                    className="justify-start"
                     onClick={handleLogout}
                   >
                     <LogOut className="mr-2 h-4 w-4" />
@@ -231,8 +248,8 @@ const Navbar = () => {
                 </>
               ) : (
                 <>
-                  <Link 
-                    to="/login" 
+                  <Link
+                    to="/login"
                     className="block text-sm font-medium py-2 transition-colors hover:text-primary"
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -241,8 +258,8 @@ const Navbar = () => {
                   <Link to="/register" onClick={() => setMobileMenuOpen(false)}>
                     <Button className="w-full rounded-full">{t('register')}</Button>
                   </Link>
-                  <Link 
-                    to="/admin-login" 
+                  <Link
+                    to="/admin-login"
                     className="block text-sm font-medium py-2 transition-colors hover:text-primary"
                     onClick={() => setMobileMenuOpen(false)}
                   >

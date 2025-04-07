@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -19,21 +18,21 @@ const HeroSection = () => {
   const [checkOutDate, setCheckOutDate] = useState<Date | undefined>(undefined);
   const [guests, setGuests] = useState(2);
   const [rooms, setRooms] = useState(1);
-  
+
   const [checkInOpen, setCheckInOpen] = useState(false);
   const [checkOutOpen, setCheckOutOpen] = useState(false);
   const [guestsOpen, setGuestsOpen] = useState(false);
 
   const handleSearch = (e: React.MouseEvent<HTMLAnchorElement> | React.FormEvent) => {
     e.preventDefault();
-    
+
     const searchParams = new URLSearchParams();
     if (destination) searchParams.set('destination', destination);
     if (checkInDate) searchParams.set('checkIn', checkInDate.toISOString());
     if (checkOutDate) searchParams.set('checkOut', checkOutDate.toISOString());
     searchParams.set('guests', guests.toString());
     searchParams.set('rooms', rooms.toString());
-    
+
     navigate(`/search?${searchParams.toString()}`);
   };
 
@@ -54,10 +53,12 @@ const HeroSection = () => {
       <div className="relative max-w-7xl w-full space-y-10 md:space-y-16 z-10 animate-fade-in">
         <div className="text-center space-y-4">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
-            Discover Your Perfect Stay
+
+            {t('Discover Your Perfect Stay')}
           </h1>
           <p className="text-xl text-white/80 max-w-3xl mx-auto">
-            Book unique accommodations and experiences around the world.
+          {t('Book unique accommodations and experiences around the world')}
+
           </p>
         </div>
 
@@ -76,11 +77,11 @@ const HeroSection = () => {
                   onChange={(e) => setDestination(e.target.value)}
                 />
               </div>
-              
-              {/* Check In */}
+
+              {/* Ceck In */}
               <Popover open={checkInOpen} onOpenChange={setCheckInOpen}>
                 <PopoverTrigger asChild>
-                  <button 
+                  <button
                     type="button"
                     className="bg-white/80 dark:bg-gray-900/80 rounded-lg p-3 flex items-center justify-between w-full text-left"
                   >
@@ -89,7 +90,7 @@ const HeroSection = () => {
                       <div>
                         <p className="text-sm text-muted-foreground">{t('check_in')}</p>
                         <p className="text-sm font-medium">
-                          {checkInDate ? format(checkInDate, 'PPP') : 'Add date'}
+                          {checkInDate ? format(checkInDate, 'PPP') : ''}
                         </p>
                       </div>
                     </div>
@@ -113,11 +114,11 @@ const HeroSection = () => {
                   />
                 </PopoverContent>
               </Popover>
-              
+
               {/* Check Out */}
               <Popover open={checkOutOpen} onOpenChange={setCheckOutOpen}>
                 <PopoverTrigger asChild>
-                  <button 
+                  <button
                     type="button"
                     className="bg-white/80 dark:bg-gray-900/80 rounded-lg p-3 flex items-center justify-between w-full text-left"
                   >
@@ -126,7 +127,7 @@ const HeroSection = () => {
                       <div>
                         <p className="text-sm text-muted-foreground">{t('check_out')}</p>
                         <p className="text-sm font-medium">
-                          {checkOutDate ? format(checkOutDate, 'PPP') : 'Add date'}
+                          {checkOutDate ? format(checkOutDate, 'PPP') : ''}
                         </p>
                       </div>
                     </div>
@@ -148,12 +149,12 @@ const HeroSection = () => {
                   />
                 </PopoverContent>
               </Popover>
-              
+
               {/* Guests & Rooms */}
               <div className="md:flex">
                 <Popover open={guestsOpen} onOpenChange={setGuestsOpen}>
                   <PopoverTrigger asChild>
-                    <button 
+                    <button
                       type="button"
                       className="bg-white/80 dark:bg-gray-900/80 rounded-lg p-3 flex items-center justify-between w-full text-left"
                     >
@@ -162,7 +163,6 @@ const HeroSection = () => {
                         <div>
                           <p className="text-sm text-muted-foreground">{t('guests')} & {t('rooms')}</p>
                           <p className="text-sm font-medium">
-                            {guests} {guests === 1 ? 'guest' : 'guests'}, {rooms} {rooms === 1 ? 'room' : 'rooms'}
                           </p>
                         </div>
                       </div>
@@ -173,9 +173,9 @@ const HeroSection = () => {
                       <div className="flex items-center justify-between">
                         <Label htmlFor="guests">{t('guests')}</Label>
                         <div className="flex items-center space-x-2">
-                          <Button 
-                            variant="outline" 
-                            size="icon" 
+                          <Button
+                            variant="outline"
+                            size="icon"
                             onClick={() => setGuests(Math.max(1, guests - 1))}
                             disabled={guests <= 1}
                             type="button"
@@ -183,9 +183,9 @@ const HeroSection = () => {
                             -
                           </Button>
                           <span className="w-8 text-center">{guests}</span>
-                          <Button 
-                            variant="outline" 
-                            size="icon" 
+                          <Button
+                            variant="outline"
+                            size="icon"
                             onClick={() => setGuests(guests + 1)}
                             type="button"
                           >
@@ -196,9 +196,9 @@ const HeroSection = () => {
                       <div className="flex items-center justify-between">
                         <Label htmlFor="rooms">{t('rooms')}</Label>
                         <div className="flex items-center space-x-2">
-                          <Button 
-                            variant="outline" 
-                            size="icon" 
+                          <Button
+                            variant="outline"
+                            size="icon"
                             onClick={() => setRooms(Math.max(1, rooms - 1))}
                             disabled={rooms <= 1}
                             type="button"
@@ -206,9 +206,9 @@ const HeroSection = () => {
                             -
                           </Button>
                           <span className="w-8 text-center">{rooms}</span>
-                          <Button 
-                            variant="outline" 
-                            size="icon" 
+                          <Button
+                            variant="outline"
+                            size="icon"
                             onClick={() => setRooms(rooms + 1)}
                             type="button"
                           >
@@ -216,8 +216,8 @@ const HeroSection = () => {
                           </Button>
                         </div>
                       </div>
-                      <Button 
-                        className="w-full mt-2" 
+                      <Button
+                        className="w-full mt-2"
                         onClick={() => setGuestsOpen(false)}
                         type="button"
                       >
@@ -228,11 +228,11 @@ const HeroSection = () => {
                 </Popover>
               </div>
             </div>
-            
+
             <div className="mt-4 text-center">
-              <Button 
+              <Button
                 type="submit"
-                size="lg" 
+                size="lg"
                 className="rounded-full px-8 bg-primary hover:bg-primary/90"
               >
                 {t('search_hotels')}

@@ -76,7 +76,20 @@ const translations: Record<string, Record<string, string>> = {
     'departure_date': 'Departure Date',
     'search_hotel_name': 'Search by hotel name',
     'advanced_filters': 'Advanced Filters',
-    'apply_filters': 'Apply Filters'
+    'apply_filters': 'Apply Filters',      'HotelHub' : 'HotelHub',
+    'Discover Your Perfect Stay':'Discover Your Perfect Stay','popular_destinations': 'Popular Destinations',
+'explore_popular_destinations': 'Explore our most booked destinations and find your next adventure.',
+'what_our_guests_say': 'What Our Guests Say',
+'guest_experiences': 'Read about experiences from our satisfied customers around the world',
+'contact_subscribe': 'Contact & Subscribe',
+'quick_links': 'Quick Links',
+'privacy': 'Privacy',
+'terms': 'Terms',
+'all_rights_reserved': 'All rights reserved',
+
+
+
+
   },
   fr: {
     'home': 'Accueil',
@@ -144,7 +157,57 @@ const translations: Record<string, Record<string, string>> = {
     'departure_date': 'Date de départ',
     'search_hotel_name': 'Rechercher par nom d\'hôtel',
     'advanced_filters': 'Filtres avancés',
-    'apply_filters': 'Appliquer les filtres'
+    'apply_filters': 'Appliquer les filtres',
+      'HotelHub' : 'HotelHub',
+       'Discover Your Perfect Stay':'Découvrez votre séjour idéal'
+       ,'Book unique accommodations and experiences around the world' :'Réservez des hébergements et des expériences uniques dans le monde entier.',
+       'Featured Hotels':'Hôtels en vedette',
+       'Discover our handpicked selection of the most extraordinary places to stay around the world.':'Découvrez notre sélection triée sur le volet des lieux de séjour les plus extraordinaires à travers le monde.','popular_destinations': 'Destinations Populaires',
+'explore_popular_destinations': 'Découvrez nos destinations les plus réservées et trouvez votre prochaine aventure.',
+'what_our_guests_say': 'Ce que disent nos clients',
+'guest_experiences': 'Lisez les expériences de nos clients satisfaits à travers le monde','contact_subscribe': 'Contact & Abonnement',
+'quick_links': 'Liens rapides',
+'privacy': 'Confidentialité',
+'terms': 'Conditions',
+'all_rights_reserved': 'Tous droits réservés',
+'Welcome to HotelHub': 'Bienvenue sur HotelHub',
+'Your ultimate destination for finding quality stays across the globe  We make your travel dreams a reality': 'Votre destination idéale pour trouver des hébergements de qualité à travers le monde Nous réalisons vos rêves de voyage',
+'Our Story': 'Notre Histoire',
+'HotelHub started with a simple goal: to make travel enjoyable and stress-free. Founded by hospitality lovers, we believe everyone deserves a perfect place to stay — no matter the destination.': 'HotelHub est né avec un objectif simple : rendre les voyages agréables et sans stress. Fondé par des passionnés de l’hôtellerie, nous croyons que chacun mérite un lieu de séjour parfait — quelle que soit la destination.',
+'Our Core Values': 'Nos Valeurs Fondamentales',
+'Quality Partnerships': 'Partenariats de Qualité',
+'We prioritize comfort, satisfaction, and feedback in everything we do.': 'Nous privilégions le confort, la satisfaction et les retours dans tout ce que nous faisons.',
+'Only working with hotels that meet our rigorous standards.': 'Nous ne collaborons qu’avec des hôtels qui répondent à nos normes rigoureuses.',
+'Transparency': 'Transparence',
+'No hidden fees or surprises. Just clear and honest pricing.': 'Aucun frais caché ni mauvaise surprise. Des tarifs clairs et honnêtes.',
+'Innovation': 'Innovation',
+'Constantly improving to provide smarter and smoother booking experiences.': 'Nous améliorons constamment nos services pour offrir une expérience de réservation plus intelligente et plus fluide.',
+'Customer First': 'Le Client d’abord', // FR
+"Ready to book your next stay?": "Prêt à réserver votre prochain séjour ?",
+  "Discover curated hotels tailored to your comfort and style.": "Découvrez des hôtels sélectionnés selon votre confort et votre style.",
+  "Browse Hotels": "Parcourir les hôtels",
+  "Get In Touch": "Contactez-nous",
+  "Have questions or just want to chat? We’re here to help you plan your perfect stay.": "Vous avez des questions ou vous voulez simplement discuter ? Nous sommes là pour vous aider à planifier votre séjour parfait.",
+  "Send Us a Message": "Envoyez-nous un message",
+  "First Name": "Prénom",
+  "Last Name": "Nom de famille",
+  "Email": "Email",
+  "Subject": "Sujet",
+  "Message": "Message",
+  "Send Message": "Envoyer le message",
+  "Our Contact Information": "Nos coordonnées",
+  "123 Hotel Street, City, Country": "123 Rue de l'Hôtel, Ville, Pays",
+  "Business Hours": "Heures d'ouverture",
+  "Monday - Friday": "Lundi - Vendredi",
+  "Saturday": "Samedi",
+  "Sunday": "Dimanche",
+  "Closed": "Fermé"
+
+
+
+
+
+
   },
   ar: {
     'home': 'الرئيسية',
@@ -212,7 +275,57 @@ const translations: Record<string, Record<string, string>> = {
     'departure_date': 'تاريخ المغادرة',
     'search_hotel_name': 'البحث باسم الفندق',
     'advanced_filters': 'تصفية متقدمة',
-    'apply_filters': 'تطبيق التصفية'
+    'apply_filters': 'تطبيق التصفية',
+    'HotelHub' : 'مركز الفنادق',
+    'Discover Your Perfect Stay':'اكتشف إقامتك المثالية',
+    'Book unique accommodations and experiences around the world':'احجز أماكن إقامة وتجارب فريدة حول العالم',
+    'Featured Hotels':'الفنادق المميزة',
+    'Discover our handpicked selection of the most extraordinary places to stay around the world.':'اكتشف مجموعتنا المختارة بعناية من أكثر الأماكن استثنائية للإقامة حول العالم','popular_destinations': 'الوجهات الشهيرة',
+'explore_popular_destinations': 'استكشف وجهاتنا الأكثر حجزًا وابحث عن مغامرتك القادمة.',
+'what_our_guests_say': 'ماذا يقول ضيوفنا',
+'guest_experiences': 'اقرأ عن تجارب عملائنا الراضين حول العالم','contact_subscribe': 'تواصل واشتراك',
+'quick_links': 'روابط سريعة',
+'privacy': 'الخصوصية',
+'terms': 'الشروط',
+'all_rights_reserved': 'جميع الحقوق محفوظة',
+'Welcome to HotelHub': 'مرحبًا بك في مركز الفنادق',
+'Your ultimate destination for finding quality stays across the globe  We make your travel dreams a reality': ' وجهتك المثالية للعثور على أماكن إقامة عالية الجودة حول العالم نحوّل أحلامك في السفر إلى حقيقة',
+'Our Story': 'قصتنا',
+'HotelHub started with a simple goal: to make travel enjoyable and stress-free. Founded by hospitality lovers, we believe everyone deserves a perfect place to stay — no matter the destination.': 'بدأت HotelHub بهدف بسيط: جعل السفر ممتعًا وخاليًا من التوتر. تأسست على يد عشاق الضيافة، ونؤمن أن لكل شخص الحق في مكان مثالي للإقامة — مهما كانت الوجهة.',
+'Our Core Values': 'قيمنا الأساسية',
+'Quality Partnerships': 'شراكات ذات جودة',
+'We prioritize comfort, satisfaction, and feedback in everything we do.': 'نُولي الأولوية للراحة والرضا والتغذية الراجعة في كل ما نقوم به.',
+'Only working with hotels that meet our rigorous standards.': 'نتعامل فقط مع الفنادق التي تفي بمعاييرنا الصارمة.',
+'Transparency': 'الشفافية',
+'No hidden fees or surprises. Just clear and honest pricing.': 'لا رسوم خفية ولا مفاجآت. فقط أسعار واضحة وصادقة.',
+'Innovation': 'الابتكار',
+'Constantly improving to provide smarter and smoother booking experiences.': 'نحن نطور خدماتنا باستمرار لتقديم تجربة حجز أكثر ذكاءً وسلاسة.',
+
+'Customer First': 'العميل أولاً',     // AR
+"Ready to book your next stay?": "هل أنت مستعد لحجز إقامتك التالية؟",
+"Discover curated hotels tailored to your comfort and style.": "اكتشف فنادق مختارة بعناية تناسب راحتك وذوقك.",
+"Browse Hotels": "تصفح الفنادق",
+"Get In Touch": "تواصل معنا",
+  "Have questions or just want to chat? We’re here to help you plan your perfect stay.": "هل لديك أسئلة أو ترغب في الدردشة؟ نحن هنا لمساعدتك في التخطيط لإقامتك المثالية.",
+  "Send Us a Message": "أرسل لنا رسالة",
+  "First Name": "الاسم الأول",
+  "Last Name": "الاسم الأخير",
+  "Email": "البريد الإلكتروني",
+  "Subject": "الموضوع",
+  "Message": "الرسالة",
+  "Send Message": "إرسال الرسالة",
+  "Our Contact Information": "معلومات الاتصال الخاصة بنا",
+  "123 Hotel Street, City, Country": "123 شارع الفندق، المدينة، البلد",
+  "Business Hours": "ساعات العمل",
+  "Monday - Friday": "الاثنين - الجمعة",
+  "Saturday": "السبت",
+  "Sunday": "الأحد",
+  "Closed": "مغلق"
+
+
+
+
+
   }
 };
 
@@ -230,10 +343,10 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     localStorage.setItem('language', language);
-    
+
     // Set direction attribute for Arabic
     document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
-    
+
     // You could also add a class to handle RTL-specific styles
     if (language === 'ar') {
       document.documentElement.classList.add('rtl');
@@ -270,3 +383,4 @@ export const useLanguage = (): LanguageContext => {
   }
   return context;
 };
+

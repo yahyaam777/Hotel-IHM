@@ -3,6 +3,7 @@ import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Star } from 'lucide-react';
+import { useLanguage } from '@/hooks/use-language';
 
 const testimonials = [
   {
@@ -32,16 +33,18 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="py-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="space-y-4 mb-10 text-center">
-          <h2 className="text-3xl font-bold tracking-tight">What Our Guests Say</h2>
+          <h2 className="text-3xl font-bold tracking-tight">{t('what_our_guests_say')}</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Read about experiences from our satisfied customers around the world.
+          {t('guest_experiences')}
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((testimonial) => (
             <Card key={testimonial.id} className="relative overflow-hidden">

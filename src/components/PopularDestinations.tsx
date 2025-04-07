@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/hooks/use-language';
 
 // Sample destination data
 const destinations = [
@@ -50,13 +50,15 @@ const destinations = [
 ];
 
 const PopularDestinations = () => {
+    const { t } = useLanguage();
+  
   return (
     <section className="py-16 px-4 bg-secondary">
       <div className="max-w-7xl mx-auto">
         <div className="space-y-4 mb-10 text-center">
-          <h2 className="text-3xl font-bold tracking-tight">Popular Destinations</h2>
+          <h2 className="text-3xl font-bold tracking-tight">{t('popular_destinations')}</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Explore our most booked destinations and find your next adventure.
+          {t('explore_popular_destinations')}
           </p>
         </div>
         
