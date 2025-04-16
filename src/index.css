@@ -85,15 +85,39 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
-
 @layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    @apply bg-background text-foreground;
+  }
+  
+  /* Font size adjustments */
+  html[data-font-size="small"] {
+    font-size: 14px;
+  }
+  
+  html[data-font-size="medium"] {
+    font-size: 16px;
+  }
+  
+  html[data-font-size="large"] {
+    font-size: 18px;
+  }
+  
+  /* Scale headings proportionally */
+  html[data-font-size="small"] h1 {
+    font-size: 1.75rem;
+  }
+  
+  html[data-font-size="medium"] h1 {
+    font-size: 2rem;
+  }
+  
+  html[data-font-size="large"] h1 {
+    font-size: 2.25rem;
   }
 }
 

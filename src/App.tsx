@@ -18,11 +18,13 @@ import { AuthProvider } from "./hooks/auth-context";
 import HotelDetails from "./pages/HotelDetails";
 import Booking from "./pages/Booking";
 import BookingConfirmation from "./pages/BookingConfirmation";
+import { ThemeProvider } from "./contexts/ThemeContext";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
+        <ThemeProvider>
     <TooltipProvider>
       <LanguageProvider>
         <AuthProvider>
@@ -49,6 +51,7 @@ const App = () => (
         </AuthProvider>
       </LanguageProvider>
     </TooltipProvider>
+    </ThemeProvider>
   </QueryClientProvider>
 );
 

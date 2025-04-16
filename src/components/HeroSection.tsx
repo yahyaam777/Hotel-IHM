@@ -7,7 +7,6 @@ import { Calendar } from '@/components/ui/calendar';
 import { format } from 'date-fns';
 import { Calendar as CalendarIcon, MapPin, Users } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
-import { cn } from '@/lib/utils';
 import { useLanguage } from '@/hooks/use-language';
 
 const HeroSection = () => {
@@ -52,11 +51,11 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative max-w-7xl w-full space-y-10 md:space-y-16 z-10 animate-fade-in">
         <div className="text-center space-y-4">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight ">
 
             {t('Discover Your Perfect Stay')}
           </h1>
-          <p className="text-xl text-white/80 max-w-3xl mx-auto">
+          <p className="text-xl opacity-80 max-w-3xl mx-auto">
           {t('Book unique accommodations and experiences around the world')}
 
           </p>

@@ -60,7 +60,7 @@ const Login = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-grow pt-24 px-6 md:px-10 flex items-center justify-center">
+      <main className="flex-grow pt-24 px-6 md:px-10 flex items-center justify-center pb-12">
         <div className="max-w-md w-full p-6 bg-card rounded-lg shadow-md border border-border">
           <h1 className="text-2xl font-bold text-center mb-6">{t('login')}</h1>
           
